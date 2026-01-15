@@ -10,6 +10,7 @@ This directory contains bug reports for issues found during testing of the Shopp
 | [BUG-002](./BUG-002-empty-cart-discount.md) | Discount Code Can Be Applied to Empty Cart | Medium | P2 - High | Open |
 | [BUG-003](./BUG-003-empty-string-name-validation.md) | Item Name with Only Spaces Is Accepted | Low | P3 - Medium | Open |
 | [BUG-004](./BUG-004-rounding-inconsistency.md) | Mathematical Inconsistency in Discount Rounding Logic | Low | P3 - Low | Open |
+| [BUG-005](./BUG-005-zero-price-validation.md) | Item with Zero Price Is Accepted Through API | Medium | P2 - High | Open |
 
 ## Summary
 
@@ -18,6 +19,7 @@ This directory contains bug reports for issues found during testing of the Shopp
 
 ### High Priority Issues (P2)
 - **BUG-002**: API allows applying discount codes to empty carts, which doesn't align with industry best practices (WooCommerce, Shopify standards).
+- **BUG-005**: API accepts items with zero price, which should be rejected for data validation and business logic consistency.
 
 ### Medium/Low Priority Issues (P3)
 - **BUG-003**: Item name validation doesn't reject whitespace-only strings, affecting data quality.
@@ -26,6 +28,6 @@ This directory contains bug reports for issues found during testing of the Shopp
 ## Testing Coverage
 
 All bugs have corresponding test cases in the test suite:
-- `framework/tests/api/apply-discount.spec.ts` - Tests for BUG-001, BUG-002
-- `framework/tests/api/add-item.spec.ts` - Tests for BUG-003
-- Test comments document BUG-004 in `apply-discount.spec.ts`
+- `framework/tests/api/apply-discount-api.spec.ts` - Tests for BUG-001, BUG-002
+- `framework/tests/api/add-item-api.spec.ts` - Tests for BUG-003, BUG-005
+- Test comments document BUG-004 in `apply-discount-api.spec.ts`
