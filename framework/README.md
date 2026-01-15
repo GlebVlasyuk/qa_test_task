@@ -35,7 +35,12 @@ cd framework
 npm install
 ```
 
-2. Make sure the application is running on `http://localhost:3000`:
+2. Install Playwright browsers:
+```bash
+npx playwright install
+```
+
+3. Make sure the application is running on `http://localhost:3000`:
 ```bash
 # From project root
 docker-compose up --build
